@@ -2,7 +2,7 @@ const path = require('path');
 const router = require('express').Router();
 
 router.get('/activities', (req, res) => {
-  res.sendFile(path.join(__dirname, '../public/index.html'));
+  res.sendFile(path.join(__dirname, '../public/activity.html'));
 });
 
 router.get('/activities/add', (req, res) => {
