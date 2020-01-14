@@ -5,6 +5,7 @@ const db = require('../models');
 router.get('/activities', (req, res) => {
   db.Activity.findAll()
     .then((activities) => {
+      console.log(activities);
       res.json(activities);
     });
 });

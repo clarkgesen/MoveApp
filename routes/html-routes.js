@@ -5,6 +5,10 @@ router.get('/activities', (req, res) => {
   res.sendFile(path.join(__dirname, '../public/activity.html'));
 });
 
+router.get('/meals', (req, res) => {
+  res.sendFile(path.join(__dirname, '../public/meals.html'));
+});
+
 router.get('/activities/add', (req, res) => {
   res.sendFile(path.join(__dirname, '../public/index.html'));
 });

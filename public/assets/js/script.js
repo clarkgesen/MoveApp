@@ -25,6 +25,8 @@
 
 $('#create-form').on('submit', (event) => {
   event.preventDefault();
+
+
   const activity = {
     name: $('#name').val(),
     bodypart: $('#bodypart').val(),
@@ -32,10 +34,22 @@ $('#create-form').on('submit', (event) => {
     reps: $('#reps').val(),
   };
 
+  if ($.isNumeric(activity.unit)) {
+    $('#unit-warning').hide();
+  } else {
+    $('#unit-warning').show();
+    throw new Error('Units must be number');
+  }
+
+  if ($.isNumeric(activity.reps)) {
+    $('#reps-warning').hide();
+  } else {
+    $('#reps-warning').show();
+    throw new Error('Reps must be number');
+  }
+
   axios.post('/api/activities', activity)
     .then((response) => {
       window.location = '/activities';
     });
-
-  console.log(activity);
 });
