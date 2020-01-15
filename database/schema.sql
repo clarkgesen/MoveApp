@@ -1,13 +1,12 @@
-DROP DATABASE IF EXISTS move_db;
+-- DROP DATABASE IF EXISTS move_db;
 create database move_db;
 use move_db;
--- bmi
-DROP TABLE IF EXISTS bmi;
-CREATE TABLE bmi (
+-- weight
+-- DROP TABLE IF EXISTS weights;
+CREATE TABLE  (weights
     id INTEGER AUTO_INCREMENT,
     weight DECIMAL(4,1),
-    height INT,
-    createdAt DATETIME,
+    createdAt VARCHAR(255),
     PRIMARY KEY(id)
 );
 -- activities

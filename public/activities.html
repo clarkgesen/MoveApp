@@ -15,7 +15,7 @@
 
 <body>
   <h1>Move</h1>
-  <div id="container" style="width:100%; height:400px;"></div>
+
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"
@@ -26,9 +26,11 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
     integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
     crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-  <script src="https://code.highcharts.com/highcharts.src.js"></script>
+  <script src="https://raw.githubusercontent.com/chartjs/Chart.js/master/samples/utils.js"></script>
 
+  <canvas id="myChart"></canvas>
   <script>
     var queryURL = 'http://localhost:8080/api/weight'
     $.ajax({
@@ -36,40 +38,61 @@
       method: 'GET'
     }).then(function (response) {
       console.log(response);
-      const weights = response.map((item) => {
+      const activity = response.map((item) => {
         return {
           y: parseInt(item.weight),
-          x: new Date(item.createdAt).getTime()
+          x: moment(item.createdAt).format()
         };
       });
 
-      // const labels = response.map((item) => {
-      //   return item.createdAt;
-      // });
+      const labels = response.map((item) => {
+        return item.createdAt;
+      });
 
-      // document.addEventListener('DOMContentLoaded', function () {
-        var myChart = Highcharts.chart('container', {
-          chart: {
-            type: 'line'
-          },
-          title: {
-            text: 'My Weight'
-          },
-          xAxis: {
-            type: 'datetime'
-          },
-          yAxis: {
-            title: {
-              text: 'My Weight'
-            }
-          },
-          series: [{
-            name: 'My Weight',
+      console.log(weights);
+
+      var ctx = document.getElementById('myChart').getContext('2d');
+      var chart = new Chart(ctx, {
+        // The type of chart we want to create
+        type: 'line',
+
+        // The data for our dataset
+        data: {
+          datasets: [{
+            label: 'My Weight',
+            backgroundColor: 'rgb(0, 0, 80.2)',
+            borderColor: 'rgb(67.8, 84.7, 90.2)',
+            fill: false,
             data: weights
           }]
-        })
-      // })
-    })
+        },
+        options: {
+          scales: {
+            xAxes: [
+              {
+                type: 'time',
+                time: {
+                  unit: 'day'
+              }
+              }
+            ]
+          }
+        }
+
+        // Configuration options go here
+        // options: {
+        //   scales: {
+        //     xAxes: [{
+        //       type: 'time',
+        //       time: {
+        //         parser: "MM/DD/YYYY"
+        //       }
+        //     }]
+        //   }
+        // }
+      });
+
+    });
   </script>
 </body>
 

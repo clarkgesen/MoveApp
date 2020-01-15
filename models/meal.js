@@ -1,3 +1,4 @@
+
 module.exports = (sequelize, DataTypes) => {
   const Meal = sequelize.define('Meal', {
     name: {
@@ -13,6 +14,5 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
     },
   });
-
   return Meal;
 };
