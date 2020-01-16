@@ -183,7 +183,7 @@
           </section>
           
           <section class="grid">
-            <article></article>
+            <article><div id="container" style="width:100%"></div></article>
             <article  id="circleContainer"></article>
             <article></article>
             <article></article>
@@ -210,6 +210,50 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
   <script src="./assets/js/dashboard.js"></script>
   <script src="./assets/js/circleChart.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://code.highcharts.com/highcharts.src.js"></script>
+  <script>
+    var queryURL = '/api/weight'
+    $.ajax({
+      url: queryURL,
+      method: 'GET'
+    }).then(function (response) {
+      console.log(response);
+      const weights = response.map((item) => {
+        return {
+          y: parseInt(item.weight),
+          x: new Date(item.createdAt).getTime()
+        };
+      });
+
+      // const labels = response.map((item) => {
+      //   return item.createdAt;
+      // });
+
+      // document.addEventListener('DOMContentLoaded', function () {
+        var myChart = Highcharts.chart('container', {
+          chart: {
+            type: 'line'
+          },
+          title: {
+            text: 'My Weight'
+          },
+          xAxis: {
+            type: 'datetime'
+          },
+          yAxis: {
+            title: {
+              text: 'My Weight'
+            }
+          },
+          series: [{
+            name: 'My Weight',
+            data: weights
+          }]
+        })
+      // })
+    })
+  </script>
   </body>
   </html>
   </html>
