@@ -91,8 +91,7 @@ $(document).ready(() => {
       // Legs icon
       if (!this.series[1].icon) {
         this.series[1].icon = this.renderer.path(
-          ['M', -8, 0, 'L', 8, 0, 'M', 0, -8, 'L', 8, 0, 0, 8,
-            'M', 8, -8, 'L', 16, 0, 8, 8],
+          ['M', -8, 0, 'L', 8, 0, 'M', 0, -8, 'L', 8, 0, 0, 8],
         )
           .attr({
             stroke: '#ffffff',
@@ -111,7 +110,7 @@ $(document).ready(() => {
 
       // Arms icon
       if (!this.series[2].icon) {
-        this.series[2].icon = this.renderer.path(['M', 0, 8, 'L', 0, -8, 'M', -8, 0, 'L', 0, -8, 8, 0])
+        this.series[2].icon = this.renderer.path(['M', -8, 0, 'L', 8, 0, 'M', 0, -8, 'L', 8, 0, 0, 8],)
           .attr({
             stroke: '#303030',
             'stroke-linecap': 'round',
@@ -130,7 +129,7 @@ $(document).ready(() => {
 
       // Chest icon
       if (!this.series[3].icon) {
-        this.series[3].icon = this.renderer.path(['M', 0, 8, 'L', 0, -8, 'M', -8, 0, 'L', 0, -8, 8, 0])
+        this.series[3].icon = this.renderer.path(['M', -8, 0, 'L', 8, 0, 'M', 0, -8, 'L', 8, 0, 0, 8],)
           .attr({
             stroke: '#303030',
             'stroke-linecap': 'round',
@@ -141,14 +140,14 @@ $(document).ready(() => {
           .add(this.series[3].group);
       }
 
-      this.series[2].icon.translate(
+      this.series[3].icon.translate(
         this.chartWidth / 2 - 10,
-        this.plotHeight / 2 - this.series[2].points[0].shapeArgs.innerR
-      - (this.series[3].points[0].shapeArgs.r - this.series[3].points[0].shapeArgs.innerR) / 2,
+        this.plotHeight / 2 - this.series[3].points[0].shapeArgs.innerR
+        - (this.series[3].points[0].shapeArgs.r - this.series[3].points[0].shapeArgs.innerR) / 2,
       );
     }
 
-    Highcharts.chart('container', {
+    Highcharts.chart('circleContainer', {
 
       chart: {
         type: 'solidgauge',

@@ -42,3 +42,6 @@ body {
     display: none;
 }
 
+#circleContainer {
+    height: fit-content;
+}
