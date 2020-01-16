@@ -147,7 +147,7 @@ $(document).ready(() => {
       );
     }
 
-    Highcharts.chart('container', {
+    Highcharts.chart('circleContainer', {
 
       chart: {
         type: 'solidgauge',
