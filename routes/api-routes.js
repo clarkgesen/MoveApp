@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const path = require('path');
 const db = require('../models');
 // Activities
 // GET index, get all activities
@@ -12,6 +13,7 @@ router.get('/activities', (req, res) => {
 // POST create, create a new activity
 router.post('/activities', (req, res) => {
   const activity = req.body;
+  // console.log(activity);
   db.Activity.create(activity)
     .then((results) => {
       res.json({
@@ -24,6 +26,21 @@ router.post('/activities', (req, res) => {
         errors: err.errors,
       });
     });
+});
+
+router.get('/activities/:name', (req, res) => {
+  const { name } = req.params;
+  console.log(name);
+  db.Activity.findAll({
+    where: {
+      name,
+    },
+  }).then((response) => {
+    console.log(response);
+    res.json({
+      success: true,
+    });
+  });
 });
 // DELETE deletes an activity by id
 router.delete('/activities/:id', (req, res) => {
@@ -45,6 +62,15 @@ router.put('/activities/:id', (req, res) => {
 // GET individual activity by id
 router.get('/activities/:id', (req, res) => {
   res.send('gets individual activity');
+});
+
+router.get('/Weight', (req, res) => {
+  db.weight.findAll()
+    .then((weight) => {
+      // console.log(weight);
+      res.json(weight);
+      res.sendFile(path.join(__dirname, '../public', 'index.html'));
+    });
 });
 
 module.exports = router;
