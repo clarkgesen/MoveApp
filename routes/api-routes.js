@@ -1,4 +1,7 @@
 const router = require('express').Router();
+const axios = require('axios');
+
+// **look into path**
 const path = require('path');
 const db = require('../models');
 // Activities
@@ -13,7 +16,24 @@ router.get('/activities', (req, res) => {
 // POST create, create a new activity
 router.post('/activities', (req, res) => {
   const activity = req.body;
+  // console.log(activity);
   db.Activity.create(activity)
+    .then((results) => {
+      res.json({
+        success: true,
+      });
+    })
+    .catch((err) => {
+      res.status(500).json({
+        success: false,
+        errors: err.errors,
+      });
+    });
+});
+router.post('/weights', (req, res) => {
+  const weight = req.body;
+  console.log(weight);
+  db.Weights.create(weight)
     .then((results) => {
       res.json({
         success: true,
@@ -42,7 +62,7 @@ router.get('/activities/:name', (req, res) => {
   });
 });
 // DELETE deletes an activity by id
-router.delete('/activities/:id', (req, res) => {
+router.delete('/meal/:id', (req, res) => {
   const { id } = req.params;
   db.Activity.destroy({
     where: {
@@ -55,12 +75,44 @@ router.delete('/activities/:id', (req, res) => {
   });
 });
 // PUT updates an activity by id
-router.put('/activities/:id', (req, res) => {
+router.put('/meal/:id', (req, res) => {
   res.send('updates an activity by id');
 });
 // GET individual activity by id
-router.get('/activities/:id', (req, res) => {
+router.get('/meal/:id', (req, res) => {
   res.send('gets individual activity');
+});
+
+
+router.post('/mealsss', (req, res) => {
+  const nutriQ = 'https://trackapi.nutritionix.com/v2/natural/nutrients';
+
+  axios({
+
+    url: nutriQ,
+    method: 'POST',
+
+    headers: {
+      'Content-Type': 'application/json',
+      'x-app-id': '145e3180',
+      'x-app-key': '1a1f6f68bf0b4aaebf563a6251c3bba5',
+
+    },
+    data: {
+      query: req.body.query,
+      timezone: 'US/Eastern',
+    },
+
+
+  })
+    .then((response) => {
+      console.log(response.data);
+
+      res.json(response.data);
+    }).catch((err) => {
+      console.log(err.message);
+      res.send(404);
+    });
 });
 
 router.get('/weight', (req, res) => {
@@ -78,7 +130,6 @@ router.post('/weight', (req, res) => {
   console.log(req.body);
   const weight = req.body;
   console.log(weight);
-  // console.log(activity);
   db.Weight.create(weight)
     .then((results) => {
       res.json({

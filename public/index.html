@@ -1,5 +1,4 @@
 <html lang="en">
-
 <head>
 
   <meta charset="UTF-8">
@@ -176,21 +175,21 @@
                   <span>Charts</span>
                 </a>
               </li> -->
-        <li>
-          <button class="collapse-btn" aria-expanded="true" aria-label="collapse menu">
-            <svg aria-hidden="true">
-              <use xlink:href="#collapse"></use>
-            </svg>
-
-          </button>
-        </li>
-      </ul>
-    </nav>
-  </header>
-  <section class="page-content">
-    <section class="search-and-user">
-      <form>
-        <!-- <input type="search" placeholder="Search Pages...">
+                <li>
+                    <button class="collapse-btn" aria-expanded="true" aria-label="collapse menu">
+                  <svg aria-hidden="true">
+                    <use xlink:href="#collapse"></use>
+                  </svg>
+                </button>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <section class="page-content">
+        <section class="search-and-user">
+            <form>
+                <!-- <input type="search" placeholder="Search Pages...">
+>>>>>>> 5c8cb80b7837e9ed4b9fe917eb696cd0d52a49c4
               <button type="submit" aria-label="submit form">
                 <svg aria-hidden="true">
                   <use xlink:href="#search"></use> -->
@@ -237,13 +236,10 @@
       <article></article>
       <article></article>
     </section>
-
-
     <footer class="page-footer">
       </small>
     </footer>
   </section>
-
 </body>
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
   integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
@@ -257,10 +253,14 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
 <script src="./assets/js/dashboard.js"></script>
-<script src="https://code.jquery.com/jquery-3.4.1.min.js"
-  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+<script src="./assets/js/dashboard.js"></script>
+<script src="./assets/js/circleChart.js"></script>
 <script src="./assets/js/Weather_script.js"></script>
-
+<script src="./assets/js/script.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://code.highcharts.com/highcharts.src.js"></script>
 <script src="./assets/js/circleChart.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="./assets/js/script.js"></script>
@@ -278,11 +278,9 @@
         x: new Date(item.createdAt).getTime()
       };
     });
-
     // const labels = response.map((item) => {
     //   return item.createdAt;
     // });
-
     // document.addEventListener('DOMContentLoaded', function () {
     var myChart = Highcharts.chart('container', {
       chart: {
@@ -307,5 +305,4 @@
     // })
   })
 </script>
-</body>
 </html>

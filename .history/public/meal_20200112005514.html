@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+
+<style>
+    img {
+        width: auto;
+        height: auto;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <div class="row" id="recipe">
+            <div class="col-sm">
+                <div class="card" style="width: 18rem;">
+                    <img src="" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title" id="food"></h5>
+                        <p class="card-text" id="content">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <a href="#" class="btn btn-primary">More info</a>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="col-sm" id="calories">
+                One of three columns
+            </div>
+
+
+
+</body>
+
+
+<script src="http://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+
+<script>
+    const nutriQ = "https://trackapi.nutritionix.com/v2/natural/nutrients;
+
+    $.ajax({
+
+            URL: nutriQ,
+            method: "POST",
+            "Content-Type": "application / json,",
+            "x - app - id": "145e3180",
+            "x - app - key": "1a1f6f68bf0b4aaebf563a6251c3bba5",
+
+
+            body: {
+                "query": "for breakfast i ate 2 eggs, bacon, and french toast",
+                "timezone": "US/Eastern"
+            }
+
+
+
+        })
+        .then(function(response) {
+
+            console.log(response);
+
+
+
+        });
+
+
+
+
+
+
+    //     var title = $("<h3>").addClass("card-title").text(data.name + " (" + new Date().toLocaleDateString() + ")");
+    // var card = $("<div>").addClass("card");
+    // var wind = $("<p>").addClass("card-text").text("Wind Speed: " + data.wind.speed + " MPH");
+    // var humid = $("<p>").addClass("card-text").text("Humidity: " + data.main.humidity + "%");
+    // var temp = $("<p>").addClass("card-text").text("Temperature: " + data.main.temp + " °F");
+    // var cardBody = $("<div>").addClass("card-body");
+    // var img = $("<img>").attr("src", "http://openweathermap.org/img/w/" + data.weather[0].icon + ".png");
+
+    // // merge and add to page
+    // title.append(img);
+    // cardBody.append(title, temp, humid, wind);
+    // card.append(cardBody);
+    // $("#today").append(card);
+
+
+
+    // var food = response.common[0].food_name;
+    // $(food).appendTo("#food");
+
+    // var name = $("#food");
+    // var food_name = $("<h1>").text(response.common[0].food_name);
+    // // var food = $("<a>").attr("href", response.common[0].food_name).append(food_name);
+    // $.append(name);
+    //   var artistImage = $("<img>").attr("src", response.thumb_url);
+    //   var trackerCount = $("<h2>").text(response.tracker_count + " fans tracking this artist");
+    //   var upcomingEvents = $("<h2>").text(response.upcoming_event_count + " upcoming events");
+    //   var goToArtist = $("<a>").attr("href", response.url).text("See Tour Dates");
+
+    // Empty the contents of the artist-div, append the new artist content
+    //   $("#artist-div").empty();
+    //   $("#artist-div").append(artistURL, artistImage, trackerCount, upcomingEvents, goToArtist);
+</script>
+
+
+</html>

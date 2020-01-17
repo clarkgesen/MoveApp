@@ -30,8 +30,6 @@ $('#create-form').on('submit', (event) => {
     });
 });
 
-
-
 // weight info
 
 $('#create-weight').on('submit', (event) => {

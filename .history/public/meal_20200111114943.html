@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row" id="recipe">
+            <div class="col-sm">
+                One of three columns
+            </div>
+
+
+
+            <div class="col-sm" id="calories">
+                One of three columns
+            </div>
+
+
+
+</body>
+
+<script>
+    src = "https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity = "sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin = "anonymous" >
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.js"></script>
+const queryURL = "https://edamam-food-and-grocery-database.p.rapidapi.com/parser" $.ajax({ url: queryURL, method: "GET" }).then(function(response) { console.log(response); })
+</script>
+
+
+<!-- function searchBandsInTown(artist) {
+
+    // Querying the bandsintown api for the selected artist, the ?app_id parameter is required, but can equal anything
+    var queryURL = "https://rest.bandsintown.com/artists/" + artist + "?app_id=codingbootcamp";
+    $.ajax({
+      url: queryURL,
+      method: "GET"
+    }).then(function(response) {
+
+      // Printing the entire object to console
+      console.log(response);
+
+      // Constructing HTML containing the artist information
+      var artistName = $("<h1>").text(response.name);
+      var artistURL = $("<a>").attr("href", response.url).append(artistName);
+      var artistImage = $("<img>").attr("src", response.thumb_url);
+      var trackerCount = $("<h2>").text(response.tracker_count + " fans tracking this artist");
+      var upcomingEvents = $("<h2>").text(response.upcoming_event_count + " upcoming events");
+      var goToArtist = $("<a>").attr("href", response.url).text("See Tour Dates");
+
+      // Empty the contents of the artist-div, append the new artist content
+      $("#artist-div").empty();
+      $("#artist-div").append(artistURL, artistImage, trackerCount, upcomingEvents, goToArtist);
+    });
+  }
+
+  // Event handler for user clicking the select-artist button
+  $("#select-artist").on("click", function(event) {
+    // Preventing the button from trying to submit the form
+    event.preventDefault();
+    // Storing the artist name
+    var inputArtist = $("#artist-input").val().trim();
+
+    // Running the searchBandsInTown function(passing in the artist as an argument)
+    searchBandsInTown(inputArtist);
+  });
+ -->
+
+</html>
