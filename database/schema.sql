@@ -8,7 +8,6 @@ DROP TABLE IF EXISTS weights;
 CREATE TABLE weights (
 	id INTEGER AUTO_INCREMENT,
 	weight DECIMAL(4,1),
-    height INT,
 	createdAt DATETIME NOT NULL,
     updatedAt DATETIME NOT NULL,
 	PRIMARY KEY(id)

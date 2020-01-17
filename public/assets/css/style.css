@@ -45,3 +45,7 @@ body {
 #circleContainer {
     height: fit-content;
 }
+
+#weight {
+    width: 50%;
+}
