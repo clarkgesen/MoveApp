@@ -47,6 +47,6 @@ $('#create-weight').on('submit', (event) => {
   axios.post('/api/weight', weight)
     .then((response) => {
 
-      window.location = '/weight';
+      window.location = '/';
     });
 });
