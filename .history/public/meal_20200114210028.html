@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="http://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="./assets/css/style.css">
+
+    <title>Move App</title>
+</head>
+
+<body>
+
+
+    <div class="container section-intro">
+        <!-- <header>
+            <h1>Lets eat healthy</h1>
+        </header> -->
+
+        <form>
+
+            <div class="form-group mx-sm-3 mb-2">
+                <label for="inputPassword2" class="sr-only">Password</label>
+                <input type="password" class="form-control" id="inputPassword2" placeholder="Password">
+            </div>
+            <button type="submit" class="btn btn-primary mb-2">Confirm identity</button>
+        </form>
+
+
+        <div class="full">
+            <!-- <div class="circle1"></div>
+            <div class="circle2"></div>
+            <div class="circle3"></div>
+            <div class="circle4"></div>
+            <div class="circle5"></div>
+            <div class="circle6"></div>
+            <div class="circle7"></div>
+            <div class="circle8"></div>
+            <div class="circle9"></div> -->
+        </div>
+
+    </div>
+
+
+
+
+
+    <script>
+        $.ajax({
+
+                url: "/api/mealsss",
+                method: "POST",
+
+
+                data: {
+                    "query": "for breakfast i ate 2 eggs, tomatoes"
+                        // "timezone": "US/Eastern"
+                }
+
+
+
+            })
+            .then(function(response) {
+                console.log("then not working");
+
+                console.log(response);
+
+
+                response.foods.forEach(element => {
+                    var image = element.photo.thumb;
+
+
+
+                    var foodName = element.food_name;
+                    console.log(foodName);
+
+                    var calories = element.nf_calories;
+                    // var newImg = $("<img>");
+                    // newImg.attr("src", image);
+                    // newImg.addClass("circle2");
+                    $(".full").append("<div class=circle2 style='background-image:url(" + image + ")'> "
+
+                        +
+                        "<ul><li>" + foodName + "</li>" +
+                        "<li>" + calories + " cal</li></ul></div>");
+
+
+                });
+
+
+
+            }).fail(function(err) {
+                console.log("fail not working");
+
+
+                console.log(err);
+
+
+            })
+    </script>
+
+</body>
+
+
+</html>
