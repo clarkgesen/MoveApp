@@ -13,7 +13,7 @@ router.get('/activities/add', (req, res) => {
   res.sendFile(path.join(__dirname, '../public/index.html'));
 });
 
-
+router.get('/')
 
 // Place this route below all others to send he index.html file
 // to any request that is not explicitly defined above

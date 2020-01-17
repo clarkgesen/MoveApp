@@ -87,7 +87,48 @@
         <div class="columns">
           <div class="column">
             <h2>Exercise</h2>
-            <input class="input is-focused" type="text" placeholder="Full Name" id="name">
+            <select class="is-focused" id="name">
+              <option value="Bench_Press">Bench Press</option>
+              <option value="Incline_Bench_Press">Incline Bench Press</option>
+              <option value="Decline_Bench_Press">Decline Bench Press</option>
+              <option value="Dumbbell_Press">Dumbbell Press</option> 
+              <option value="Chest_Flys">Chest Flys</option>
+              <option value="Dips">Dips</option>
+              <option value="Land_Mine_Chest_Press">Land Mine Chest Press</option>
+              <option value="Wide_Grip_Pulldown">Wide Grip Pulldown</option> 
+              <option value="Barbell_Rows">Barbell Rows</option>
+              <option value="Dumbbell_Rows">Dumbbell Rows</option>
+              <option value="Lat_Pulldown">Lat Pulldown</option>
+              <option value="Hammer_Row">Hammer Row</option> 
+              <option value="Reverse_Flys">Reverse Flys</option>
+              <option value="Rack_Pull">Rack Pull</option>
+              <option value="Cable_Pull_Triceps">Cable Pull Triceps</option>
+              <option value="Cable_Pull_Biceps">Cable Pull Biceps</option>
+              <option value="Skull_Crushers">Skull Crushers</option>
+              <option value="Close_Grip_Bench_Press">Close Grip Bench Press</option>
+              <option value="Overhead_Rope_Extension">Overhead Rope Extension</option>
+              <option value="Preacher_Curls">Preacher Curls</option> 
+              <option value="Barbell_Curls">Barbell Curls</option>
+              <option value="Hammer_Curls">Hammer Curls</option>
+              <option value="Goblet_Squat">Goblet Squat</option>
+              <option value="Squats">Squats</option>
+              <option value="Single_Leg_Press">Single Leg Press</option>
+              <option value="Leg_Extension">Leg Extension</option> 
+              <option value="Hamstring_Curls">Hamstring Curls</option>
+              <option value="Calf_Raises">Calf Raises</option>
+              <option value="Cable_Side_Raises">Cable Side Raises</option>
+              <option value="Barbell_Military_Press">Barbell Military Press</option>
+              <option value="Hammer_Press">Hammer Press</option>
+              <option value="Rear_Delt_Cable_Pull">Rear Delt Cable Pull</option>
+              <option value="Shrugs">Shrugs</option>
+              <option value="Dumbbell_Front">Dumbbell Front</option> 
+              <option value="Dumbbell_Side">Dumbbell Side</option> 
+              <option value="Dumbbell_Rear">Dumbbell Rear</option> 
+              <option value="Deadlift">Deadlift</option>
+              <option value="Runnign">Running</option>
+              <option value="Biking">Biking</option> 
+              <option value="Elliptical">Elliptical</option> 
+            </select>
             <button type="submit" class="button is-focused">Submit</button>
     </form>
     </div>
@@ -96,6 +137,8 @@
       <div class="select">
         <select class="is-focused" id="bodypart">
           <option value="legs">Legs</option>
+          <option value="back">Back</option>
+          <option value="shoulders">Shoulders</option>
           <option value="arms">Arms</option>
           <option value="chest">Chest</option>
           <option value="cardio">Cardio</option>
@@ -117,9 +160,7 @@
     </div>
     </div>
     <div id="container" width="400" height="400"></div>
-    <div id="activeContainer" width="400" height="400"></div>
-    <div id="speedContainer" width="400" height="400"></div>
-    <div id="gaugeContainer" width="400" height="400"></div>
+    <div id="circleContainer" width="400" height="400"></div>
     </form>
 
   </section>
@@ -130,7 +171,8 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
   <script src="./assets/js/script.js"></script>
-  <script src="./assets/js/activityCharts.js"></script>
+  <script src="./assets/js/exerciseChart.js"></script>
+  <script src="./assets/js/circleChart.js"></script>
 </body>
 
 </html>
