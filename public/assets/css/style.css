@@ -30,4 +30,18 @@ body {
     margin: 5px;
 }
 
+#unit-warning {
+    color: rgba(255, 0, 0, .65);
+    margin: 3px 5px;
+    display: none;
+}
 
+#reps-warning {
+    color: rgba(255, 0, 0, .65);
+    margin: 3px 5px;
+    display: none;
+}
+
+#circleContainer {
+    height: fit-content;
+}

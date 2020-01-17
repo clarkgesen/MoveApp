@@ -1,14 +1,10 @@
 module.exports = (sequelize, DataTypes) => {
-  const BMI = sequelize.define('BMI', {
-    height: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-    },
+  const Weight = sequelize.define('weight', {
     weight: {
       type: DataTypes.DECIMAL(4, 1),
       allowNull: false,
     },
   });
 
-  return BMI;
+  return Weight;
 };
