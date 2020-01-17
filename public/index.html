@@ -1,23 +1,26 @@
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
-    <link rel="stylesheet" href="./assets/css/dashboard.css">
-    <link rel="stylesheet" href="./assets/css/style.css">
-    <script src="https://code.highcharts.com/highcharts.js"></script>
-    <script src="https://code.highcharts.com/highcharts-more.js"></script>
-    <script src="https://code.highcharts.com/modules/solid-gauge.js"></script>
-    <script src="https://code.highcharts.com/modules/exporting.js"></script>
-    <script src="https://code.highcharts.com/modules/export-data.js"></script>
-    <script src="https://code.highcharts.com/modules/accessibility.js"></script>
-    <title>Dashbboard</title>
-</head>
-
-<body>
-    <svg style="display:none;">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+        integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+       <link rel="stylesheet" href="./assets/css/style-weather.css">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+      <link rel="stylesheet"  href="./assets/css/dashboard.css">
+      <link rel="stylesheet"  href="./assets/css/style.css">
+      <script src="https://code.highcharts.com/highcharts.js"></script>
+      <script src="https://code.highcharts.com/highcharts-more.js"></script>
+      <script src="https://code.highcharts.com/modules/solid-gauge.js"></script>
+      <script src="https://code.highcharts.com/modules/exporting.js"></script>
+      <script src="https://code.highcharts.com/modules/export-data.js"></script>
+      <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+      <title>Dashbboard</title>
+  </head>
+  <body>
+      <svg style="display:none;">
           <symbol id="down" viewBox="0 0 16 16">
             <polygon points="3.81 4.38 8 8.57 12.19 4.38 13.71 5.91 8 11.62 2.29 5.91 3.81 4.38" />
           </symbol>
@@ -65,7 +68,6 @@
     <header class="page-header">
         <nav>
             <a href="#0">
-                <img class="logo" src="" alt="forecastr logo">
             </a>
             <button class="toggle-mob-menu" aria-expanded="false" aria-label="open menu">
               <svg width="20" height="20" aria-hidden="true">
@@ -73,12 +75,12 @@
               </svg>
             </button>
             <ul class="admin-menu" aria-disabled="true">
-                <li class="menu-heading">
-                    <h3>Admin</h3>
-                </li>
-                <li>
-                    <a href="/">
-                        <svg>
+              <li class="menu-heading">
+                <h3>Admin</h3>
+              </li>
+              <li>
+                <a href="./index.html">
+                  <svg>
                     <use xlink:href="#pages"></use>
                   </svg>
                         <span>Dashbboard</span>
@@ -89,26 +91,26 @@
                         <svg>
                     <use xlink:href="./activity.html"></use>
                   </svg>
-                        <span>Activity</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="">
-                        <svg>
-                      <use xlink:href="#trends"></use>
-                    </svg>
-                        <span>Meals</span>
-                    </a>
-                </li>
-                <!-- <li>
-                <a href="#0">
-                  <svg>
-                    <use xlink:href="#collection"></use>
-                  </svg>
-                  <span>Collection</span>
+                  <span>Activity</span>
                 </a>
               </li>
               <li>
+                <a href="./meals.html">
+                    <svg>
+                      <use xlink:href="#trends"></use>
+                    </svg>
+                    <span>Meals</span>
+                  </a>
+              </li>
+              <li>
+                <a href="./Weather.html">
+                  <svg>
+                    <use xlink:href="#collection"></use>
+                  </svg>
+                  <span>Weather</span>
+                </a>
+              </li>
+               <!-- <li>
                 <a href="#0">
                   <svg>
                     <use xlink:href="#comments"></use>
@@ -135,7 +137,7 @@
                   <span>Settings</span>
                 </a>
               </li> -->
-                <!-- <li>
+        <!-- <li>
                 <a href="#0">
                   <svg>
                     <use xlink:href="#options"></use>
@@ -143,7 +145,6 @@
                   <span>Options</span>
                 </a>
               </li> -->
-                <!-- <li>
                 <a href="#0">
                   <svg>
                     <use xlink:href="#charts"></use>
@@ -156,7 +157,6 @@
                   <svg aria-hidden="true">
                     <use xlink:href="#collapse"></use>
                   </svg>
-                  <span>Collapse</span>
                 </button>
                 </li>
             </ul>
@@ -169,10 +169,10 @@
               <button type="submit" aria-label="submit form">
                 <svg aria-hidden="true">
                   <use xlink:href="#search"></use> -->
-                </svg>
-                </button>
-            </form>
-            <!-- <div class="admin-profile">
+        </svg>
+        </button>
+      </form>
+      <!-- <div class="admin-profile">
               <span class="greeting">Hello admin</span>
               <div class="notifications">
                 <span class="badge">1</span> -->
@@ -180,85 +180,89 @@
                   <use xlink:href="#users"></use>
                 </svg>
             </div>
-            </div>
-        </section>
-
-        <section class="grid">
+          </section>
+          <section class="grid">
+            <article><div id="container" style="width:100%"></div></article>
+            <article  id="circleContainer"></article>
+            <article>  <div class="">
+                <h1 class="city"></h1>
+                <img id="icon"></img>
+                <h3 class="temp"></h3>
+                <h3 class="humidity"></h3>
+                <h3 class="windSpeed"></h3>
+                <h3 class="uvIndex"></h3>
+                <hr class="my-4">
+                <div class="row"></article>
+            <article></article>
             <article>
-                <div id="container" style="width:100%"></div>
             </article>
-            <article id="circleContainer"></article>
             <article></article>
             <article></article>
-            <article></article>
-            <article></article>
-            <article></article>
-            <article></article>
-        </section>
-
-
-
-        <footer class="page-footer">
+          </section>
+          <footer class="page-footer">
             </small>
-        </footer>
-    </section>
-
-</body>
-<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+          </footer>
+        </section>
+  </body>
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+  integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+  integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+  integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
 <script src="./assets/js/dashboard.js"></script>
 <script src="./assets/js/circleChart.js"></script>
+<script src="./assets/js/Weather_script.js"></script>
+<script src="./assets/js/script.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://code.highcharts.com/highcharts.src.js"></script>
 <script>
-    var queryURL = '/api/weight'
-    $.ajax({
-        url: queryURL,
-        method: 'GET'
-    }).then(function(response) {
-        console.log(response);
-        const weights = response.map((item) => {
-            return {
-                y: parseInt(item.weight),
-                x: new Date(item.createdAt).getTime()
-            };
-        });
+  var queryURL = '/api/weight'
+  $.ajax({
+    url: queryURL,
+    method: 'GET'
+  }).then(function (response) {
+    console.log(response);
+    const weights = response.map((item) => {
+      return {
+        y: parseInt(item.weight),
+        x: new Date(item.createdAt).getTime()
+      };
+    });
 
-        // const labels = response.map((item) => {
-        //   return item.createdAt;
-        // });
+    // const labels = response.map((item) => {
+    //   return item.createdAt;
+    // });
 
-        // document.addEventListener('DOMContentLoaded', function () {
-        var myChart = Highcharts.chart('container', {
-                chart: {
-                    type: 'line'
-                },
-                title: {
-                    text: 'My Weight'
-                },
-                xAxis: {
-                    type: 'datetime'
-                },
-                yAxis: {
-                    title: {
-                        text: 'My Weight'
-                    }
-                },
-                series: [{
-                    name: 'My Weight',
-                    data: weights
-                }]
-            })
-            // })
+    // document.addEventListener('DOMContentLoaded', function () {
+    var myChart = Highcharts.chart('container', {
+      chart: {
+        type: 'line'
+      },
+      title: {
+        text: 'My Weight'
+      },
+      xAxis: {
+        type: 'datetime'
+      },
+      yAxis: {
+        title: {
+          text: 'My Weight'
+        }
+      },
+      series: [{
+        name: 'My Weight',
+        data: weights
+      }]
     })
+    // })
+  })
+
 </script>
 </body>
-
-</html>
-
 </html>

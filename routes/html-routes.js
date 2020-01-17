@@ -22,7 +22,7 @@ router.get('/meal-OC', (req, res) => {
     res.sendFile(path.join(__dirname, '../public/mealOnclick.html'));
 });
 
-
+router.get('/')
 
 // Place this route below all others to send he index.html file
 // to any request that is not explicitly defined above

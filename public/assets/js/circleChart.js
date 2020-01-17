@@ -10,28 +10,42 @@ $(document).ready(() => {
       const activitydate = new Date(data[i].createdAt);
       if (today.getMonth() === activitydate.getMonth() && data[i].bodypart === 'legs') { legscount++; }
     }
-    const legspercent = (legscount / 5) * 100;
+    const legspercent = (legscount / 12) * 100;
 
     let armscount = 0;
     for (i = 0; i < data.length; ++i) {
       const activitydate = new Date(data[i].createdAt);
       if (today.getMonth() === activitydate.getMonth() && data[i].bodypart === 'arms') { armscount++; }
     }
-    const armspercent = ((armscount / 5) * 100);
+    const armspercent = ((armscount / 12) * 100);
 
     let chestcount = 0;
     for (i = 0; i < data.length; ++i) {
       const activitydate = new Date(data[i].createdAt);
       if (today.getMonth() === activitydate.getMonth() && data[i].bodypart === 'chest') { chestcount++; }
     }
-    const chestpercent = ((chestcount / 5) * 100);
+    const chestpercent = ((chestcount / 12) * 100);
 
     let cardiocount = 0;
     for (i = 0; i < data.length; ++i) {
       const activitydate = new Date(data[i].createdAt);
       if (today.getMonth() === activitydate.getMonth() && data[i].bodypart === 'cardio') { cardiocount++; }
     }
-    const cardiopercent = ((cardiocount / 5) * 100);
+    const cardiopercent = ((cardiocount / 12) * 100);
+
+    let backcount = 0;
+    for (i = 0; i < data.length; ++i) {
+      const activitydate = new Date(data[i].createdAt);
+      if (today.getMonth() === activitydate.getMonth() && data[i].bodypart === 'back') { backcount++; }
+    }
+    const backpercent = ((backcount / 12) * 100);
+
+    let shouldercount = 0;
+    for (i = 0; i < data.length; ++i) {
+      const activitydate = new Date(data[i].createdAt);
+      if (today.getMonth() === activitydate.getMonth() && data[i].bodypart === 'shoulders') { shouldercount++; }
+    }
+    const shoulderpercent = ((shouldercount / 12) * 100);
 
     // const chartData = data.map((item) => ({
     //   y: parseFloat(item.reps),
@@ -70,6 +84,40 @@ $(document).ready(() => {
     //  * In the chart render event, add icons on top of the circular shapes
     //  */
     function renderIcons() {
+      // Shoulder icon
+      if (!this.series[0].icon) {
+        this.series[0].icon = this.renderer.path(['M', -8, 0, 'L', 8, 0, 'M', 0, -8, 'L', 8, 0, 0, 8])
+          .attr({
+            stroke: '#303030',
+            'stroke-linecap': 'round',
+            'stroke-linejoin': 'round',
+            'stroke-width': 2,
+            zIndex: 10,
+          })
+          .add(this.series[0].group);
+      }
+      this.series[0].icon.translate(
+        this.chartWidth / 2 - 10,
+        this.plotHeight / 2 - this.series[0].points[0].shapeArgs.innerR
+        - (this.series[0].points[0].shapeArgs.r - this.series[0].points[0].shapeArgs.innerR) / 2,
+      );
+      // Back icon
+      if (!this.series[0].icon) {
+        this.series[0].icon = this.renderer.path(['M', -8, 0, 'L', 8, 0, 'M', 0, -8, 'L', 8, 0, 0, 8])
+          .attr({
+            stroke: '#303030',
+            'stroke-linecap': 'round',
+            'stroke-linejoin': 'round',
+            'stroke-width': 2,
+            zIndex: 10,
+          })
+          .add(this.series[0].group);
+      }
+      this.series[0].icon.translate(
+        this.chartWidth / 2 - 10,
+        this.plotHeight / 2 - this.series[0].points[0].shapeArgs.innerR
+        - (this.series[0].points[0].shapeArgs.r - this.series[0].points[0].shapeArgs.innerR) / 2,
+      );
       // Cardio icon
       if (!this.series[0].icon) {
         this.series[0].icon = this.renderer.path(['M', -8, 0, 'L', 8, 0, 'M', 0, -8, 'L', 8, 0, 0, 8])
@@ -80,7 +128,7 @@ $(document).ready(() => {
             'stroke-width': 2,
             zIndex: 10,
           })
-          .add(this.series[2].group);
+          .add(this.series[0].group);
       }
       this.series[0].icon.translate(
         this.chartWidth / 2 - 10,
@@ -89,8 +137,8 @@ $(document).ready(() => {
       );
 
       // Legs icon
-      if (!this.series[1].icon) {
-        this.series[1].icon = this.renderer.path(
+      if (!this.series[0].icon) {
+        this.series[0].icon = this.renderer.path(
           ['M', -8, 0, 'L', 8, 0, 'M', 0, -8, 'L', 8, 0, 0, 8],
         )
           .attr({
@@ -102,15 +150,15 @@ $(document).ready(() => {
           })
           .add(this.series[2].group);
       }
-      this.series[1].icon.translate(
+      this.series[0].icon.translate(
         this.chartWidth / 2 - 10,
         this.plotHeight / 2 - this.series[1].points[0].shapeArgs.innerR
         - (this.series[1].points[0].shapeArgs.r - this.series[1].points[0].shapeArgs.innerR) / 2,
       );
 
       // Arms icon
-      if (!this.series[2].icon) {
-        this.series[2].icon = this.renderer.path(['M', -8, 0, 'L', 8, 0, 'M', 0, -8, 'L', 8, 0, 0, 8],)
+      if (!this.series[0].icon) {
+        this.series[0].icon = this.renderer.path(['M', -8, 0, 'L', 8, 0, 'M', 0, -8, 'L', 8, 0, 0, 8],)
           .attr({
             stroke: '#303030',
             'stroke-linecap': 'round',
@@ -121,15 +169,15 @@ $(document).ready(() => {
           .add(this.series[2].group);
       }
 
-      this.series[2].icon.translate(
+      this.series[0].icon.translate(
         this.chartWidth / 2 - 10,
         this.plotHeight / 2 - this.series[2].points[0].shapeArgs.innerR
         - (this.series[2].points[0].shapeArgs.r - this.series[2].points[0].shapeArgs.innerR) / 2,
       );
 
       // Chest icon
-      if (!this.series[3].icon) {
-        this.series[3].icon = this.renderer.path(['M', -8, 0, 'L', 8, 0, 'M', 0, -8, 'L', 8, 0, 0, 8],)
+      if (!this.series[0].icon) {
+        this.series[0].icon = this.renderer.path(['M', -8, 0, 'L', 8, 0, 'M', 0, -8, 'L', 8, 0, 0, 8],)
           .attr({
             stroke: '#303030',
             'stroke-linecap': 'round',
@@ -137,10 +185,10 @@ $(document).ready(() => {
             'stroke-width': 2,
             zIndex: 10,
           })
-          .add(this.series[3].group);
+          .add(this.series[0].group);
       }
 
-      this.series[3].icon.translate(
+      this.series[0].icon.translate(
         this.chartWidth / 2 - 10,
         this.plotHeight / 2 - this.series[3].points[0].shapeArgs.innerR
         - (this.series[3].points[0].shapeArgs.r - this.series[3].points[0].shapeArgs.innerR) / 2,
@@ -185,31 +233,45 @@ $(document).ready(() => {
         startAngle: 0,
         endAngle: 360,
         background: [{ // Track for Cardio
-          outerRadius: '112%',
-          innerRadius: '88%',
+          outerRadius: '108%',
+          innerRadius: '93%',
           backgroundColor: Highcharts.color(Highcharts.getOptions().colors[0])
             .setOpacity(0.3)
             .get(),
           borderWidth: 0,
-        }, { // Track for Legs
-          outerRadius: '87%',
-          innerRadius: '63%',
+        }, { // Track for Cardio
+          outerRadius: '92%',
+          innerRadius: '77%',
           backgroundColor: Highcharts.color(Highcharts.getOptions().colors[1])
             .setOpacity(0.3)
             .get(),
           borderWidth: 0,
-        }, { // Track for Arms
-          outerRadius: '62%',
-          innerRadius: '38%',
+        }, { // Track for Cardio
+          outerRadius: '76%',
+          innerRadius: '61%',
           backgroundColor: Highcharts.color(Highcharts.getOptions().colors[2])
+            .setOpacity(0.3)
+            .get(),
+          borderWidth: 0,
+        }, { // Track for Legs
+          outerRadius: '60%',
+          innerRadius: '45%',
+          backgroundColor: Highcharts.color(Highcharts.getOptions().colors[3])
+            .setOpacity(0.3)
+            .get(),
+          borderWidth: 0,
+        }, { // Track for Arms
+          outerRadius: '44%',
+          innerRadius: '29%',
+          backgroundColor: Highcharts.color(Highcharts.getOptions().colors[4])
             .setOpacity(0.3)
             .get(),
           borderWidth: 0,
         },
         { // Track for Arms
-          outerRadius: '37%',
+          outerRadius: '28%',
           innerRadius: '13%',
-          backgroundColor: Highcharts.color(Highcharts.getOptions().colors[3])
+          backgroundColor: Highcharts.color(Highcharts.getOptions().colors[5])
             .setOpacity(0.3)
             .get(),
           borderWidth: 0,
@@ -235,35 +297,51 @@ $(document).ready(() => {
       },
 
       series: [{
-        name: 'Cardio',
+        name: 'Shoulders',
         data: [{
           color: Highcharts.getOptions().colors[0],
-          radius: '112%',
-          innerRadius: '88%',
+          radius: '108%',
+          innerRadius: '93%',
+          y: shoulderpercent,
+        }],
+      }, {
+        name: 'Back',
+        data: [{
+          color: Highcharts.getOptions().colors[1],
+          radius: '92%',
+          innerRadius: '77%',
+          y: backpercent,
+        }],
+      }, {
+        name: 'Cardio',
+        data: [{
+          color: Highcharts.getOptions().colors[2],
+          radius: '76%',
+          innerRadius: '61%',
           y: cardiopercent,
         }],
       }, {
         name: 'Legs',
         data: [{
-          color: Highcharts.getOptions().colors[1],
-          radius: '87%',
-          innerRadius: '63%',
+          color: Highcharts.getOptions().colors[3],
+          radius: '60%',
+          innerRadius: '45%',
           y: legspercent,
         }],
       }, {
         name: 'Arms',
         data: [{
-          color: Highcharts.getOptions().colors[2],
-          radius: '62%',
-          innerRadius: '38%',
+          color: Highcharts.getOptions().colors[4],
+          radius: '44%',
+          innerRadius: '29%',
           y: armspercent,
         }],
       },
       {
         name: 'Chest',
         data: [{
-          color: Highcharts.getOptions().colors[3],
-          radius: '37%',
+          color: Highcharts.getOptions().colors[5],
+          radius: '28%',
           innerRadius: '13%',
           y: chestpercent,
         }],
