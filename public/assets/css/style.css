@@ -1,0 +1,47 @@
+h1 {
+    margin: 5px;
+}
+
+h2 {
+    padding: 5px 5px 0px 5px;
+}
+
+body {
+    margin: 5px;
+}
+
+#unit-column {
+    margin: 5px;
+}
+
+#reps-column {
+    margin: 5px;
+}
+
+.button.is-focused {
+    margin: 5px;
+}
+
+.input.is-focused {
+    margin: 5px;
+}
+
+.select {
+    margin: 5px;
+}
+
+#unit-warning {
+    color: rgba(255, 0, 0, .65);
+    margin: 3px 5px;
+    display: none;
+}
+
+#reps-warning {
+    color: rgba(255, 0, 0, .65);
+    margin: 3px 5px;
+    display: none;
+}
+
+#circleContainer {
+    height: fit-content;
+}

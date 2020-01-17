@@ -1,46 +1,128 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bulma CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
-    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Health App</title>
-  </head>
-  <body>
+  <!-- Bulma CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+  <link rel="stylesheet" type="text/css" href="./assets/css/dashboard.css">
+  <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
+  <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+  <script src="https://code.highcharts.com/highcharts.js"></script>
+  <script src="https://code.highcharts.com/highcharts-more.js"></script>
+  <script src="https://code.highcharts.com/modules/solid-gauge.js"></script>
+  <script src="https://code.highcharts.com/modules/exporting.js"></script>
+  <script src="https://code.highcharts.com/modules/export-data.js"></script>
+  <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+
+  <title>Move Activities</title>
+</head>
+
+<body>
+  <header class="page-header">
+    <nav>
+      <a href="#0">
+        <img class="logo" src="" alt="forecastr logo">
+      </a>
+      <button class="toggle-mob-menu" aria-expanded="false" aria-label="open menu">
+        <svg width="20" height="20" aria-hidden="true">
+          <use xlink:href="#down"></use>
+        </svg>
+      </button>
+      <ul class="admin-menu" aria-disabled="true">
+        <li class="menu-heading">
+          <h3>Admin</h3>
+        </li>
+        <li>
+          <a href="/">
+            <svg>
+              <use xlink:href="#pages"></use>
+            </svg>
+            <span>Dashbboard</span>
+          </a>
+        </li>
+        <li>
+          <a href="./activity.html">
+            <svg>
+              <use xlink:href="./activity.html"></use>
+            </svg>
+            <span>Activity</span>
+          </a>
+        </li>
+        <li>
+          <a href="">
+            <svg>
+              <use xlink:href="#trends"></use>
+            </svg>
+            <span>Meals</span>
+          </a>
+        </li>
+        <li>
+          <button class="collapse-btn" aria-expanded="true" aria-label="collapse menu">
+            <svg aria-hidden="true">
+              <use xlink:href="#collapse"></use>
+            </svg>
+            <span>Collapse</span>
+          </button>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <section class="page-content">
     <h1>Add Activity</h1>
     <form id="create-form">
       <div class="form-group">
-        <label for="name">Name</label>
-        <input type="text" class="form-control" id="name" aria-describedby="emailHelp">
-      </div>
-      <div class="form-group">
-        <label for="bodypart">bodypart</label>
-        <select id="bodypart" class="form-control">
-          <option value="legs">legs</option>
-          <option value="arms">arms</option>
-          <option value="chest">chest</option>
+        <div class="columns">
+          <div class="column">
+            <h2>Exercise</h2>
+            <input class="input is-focused" type="text" placeholder="Full Name" id="name">
+            <button type="submit" class="button is-focused">Submit</button>
+    </form>
+    </div>
+    <div class="column is-2 desktop is one-fifth widescreen">
+      <h2>Bodypart</h2>
+      <div class="select">
+        <select class="is-focused" id="bodypart">
+          <option value="legs">Legs</option>
+          <option value="arms">Arms</option>
+          <option value="chest">Chest</option>
+          <option value="cardio">Cardio</option>
         </select>
-        <label for="unit">unit</label>
-        <select id="unit" class="form-control">
-          <option value="lbs">lbs</option>
-          <option value="miles">miles</option></select>
-          <label for="reps">reps</label>
-        <input type="text" class="form-control" id="reps">
       </div>
-      <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+    <div class="column" id="unit-column"> <label for="unit">Units</label>
+      <input class="input is-focused" placeholder="Miles or Pounds" id="unit">
+      <div id="unit-warning">
+        must be a number
+      </div>
+    </div>
+    <div class="column" id="reps-column"> <label for="reps">Reps</label>
+      <input class="input is-focused" placeholder="Lifts or Laps" id="reps">
+      <div id="reps-warning">
+        must be a number
+      </div>
+    </div>
+    </div>
+    </div>
+    <div id="container" width="400" height="400"></div>
+    <div id="activeContainer" width="400" height="400"></div>
+    <div id="speedContainer" width="400" height="400"></div>
+    <div id="gaugeContainer" width="400" height="400"></div>
     </form>
 
+  </section>
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js -->
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+  <script src="./assets/js/script.js"></script>
+  <script src="./assets/js/activityCharts.js"></script>
+</body>
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="./assets/js/script.js"></script>
-  </body>
 </html>
