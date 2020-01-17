@@ -13,7 +13,6 @@ router.get('/activities', (req, res) => {
 // POST create, create a new activity
 router.post('/activities', (req, res) => {
   const activity = req.body;
-  // console.log(activity);
   db.Activity.create(activity)
     .then((results) => {
       res.json({
@@ -64,12 +63,33 @@ router.get('/activities/:id', (req, res) => {
   res.send('gets individual activity');
 });
 
-router.get('/Weight', (req, res) => {
-  db.weight.findAll()
+router.get('/weight', (req, res) => {
+  db.Weight.findAll()
     .then((weight) => {
       // console.log(weight);
       res.json(weight);
       res.sendFile(path.join(__dirname, '../public', 'index.html'));
+    });
+});
+
+
+// POST create, create a new weight
+router.post('/weight', (req, res) => {
+  console.log(req.body);
+  const weight = req.body;
+  console.log(weight);
+  // console.log(activity);
+  db.Weight.create(weight)
+    .then((results) => {
+      res.json({
+        success: true,
+      });
+    })
+    .catch((err) => {
+      res.status(500).json({
+        success: false,
+        errors: err.errors,
+      });
     });
 });
 

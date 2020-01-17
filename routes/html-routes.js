@@ -13,13 +13,16 @@ router.get('/activities/add', (req, res) => {
   res.sendFile(path.join(__dirname, '../public/index.html'));
 });
 
-
+router.get('/weight', (req, res) => {
+  res.sendFile(path.join(__dirname, '../public/weight.html'));
+});
 
 // Place this route below all others to send he index.html file
 // to any request that is not explicitly defined above
 router.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, '../public/index.html'));
 });
+
 
 
 
