@@ -28,6 +28,23 @@ router.post('/activities', (req, res) => {
     });
 });
 
+router.post('/weights', (req, res) => {
+  const weight = req.body;
+  console.log(weight);
+  db.Weights.create(weight)
+    .then((results) => {
+      res.json({
+        success: true,
+      });
+    })
+    .catch((err) => {
+      res.status(500).json({
+        success: false,
+        errors: err.errors,
+      });
+    });
+});
+
 router.get('/activities/:name', (req, res) => {
   const { name } = req.params;
   console.log(name);
