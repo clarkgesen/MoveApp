@@ -71,8 +71,8 @@
             </ul>
         </nav> -->
         <!-- **Nav bar ends here** -->
-        <div class="container d-none">
-            <div class="row">
+        <div class="container .d-none ">
+            <div class="row .d-none ">
                 <!-- **Search bar and table*** -->
                 <div class="col-md-4">
                     <nav class="navbar navbar-light bg-light">
@@ -139,6 +139,20 @@
             $(".section-intro").css("box-shadow", "inset 0px 0px 900px 150px #4c3f37");
 
 
+
+
+
+
+
+
+
+
+
+            // **this code allow the to change to another page when button is clicked**
+            // window.location.href = "mealOnclick.html";
+
+
+
             // ***This code changes the background color onclick**
             // $(".section-intro").css("background", "rgba(0, 0, 0, .5)");
 
@@ -157,10 +171,20 @@
             let myMeals = $("#myMeals-OC").val().trim();
             console.log(myMeals);
 
+
+
+
             const nutriQ = 'https://trackapi.nutritionix.com/v2/natural/nutrients';
+
+
             $.ajax({
+
+
                     url: "/api/mealsss",
                     method: "POST",
+
+
+
 
                     data: {
                         "query": `${myMeals}`
@@ -232,9 +256,22 @@
                             table.row($("td").parents('tr'))
                                 .remove()
                                 .draw();
+
+
+
+
+
                         })
 
+
+
+
+
+
+
                     });
+
+
 
                 }).fail(function(err) {
                     console.log("fail not working");

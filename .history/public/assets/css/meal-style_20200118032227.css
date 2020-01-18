@@ -23,8 +23,8 @@
     -webkit-transform-origin: -31% 81%;
     margin-left: -30px;
     margin-top: 20px;
-    -webkit-transform: translate(-54px, 100px);
-    -moz-transform: translate(-54px, 100px);
+    -webkit-transform: translate(-54px, 50px);
+    -moz-transform: translate(-54px, 50px);
     -o-transform: translate(-54px, 50px);
 }
 
@@ -227,10 +227,6 @@ tbody tr td {
     .full {
         width: 100%;
     }
-}
-
-.container {
-    height: 300px;
 }
 
 

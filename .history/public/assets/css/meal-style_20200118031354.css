@@ -19,19 +19,19 @@
 .arc1 {
     width: 160px;
     height: 160px;
-    background: green;
-    -webkit-transform-origin: -31% 81%;
+    background: #00a0db;
+    -webkit-transform-origin: -31% 61%;
     margin-left: -30px;
     margin-top: 20px;
-    -webkit-transform: translate(-54px, 100px);
-    -moz-transform: translate(-54px, 100px);
+    -webkit-transform: translate(-54px, 50px);
+    -moz-transform: translate(-54px, 50px);
     -o-transform: translate(-54px, 50px);
 }
 
 .arc2 {
     width: 160px;
     height: 160px;
-    background: yellow;
+    background: #00a0db;
     -webkit-transform: skew(45deg, 0deg);
     -moz-transform: skew(45deg, 0deg);
     -o-transform: skew(45deg, 0deg);
@@ -54,15 +54,12 @@
     width: 550px;
     height: 550px;
     border-radius: 550px;
-    background: red;
+    background: #424242;
     overflow: hidden;
     left: 50px;
     top: 50px;
     position: absolute;
 }
-
-
-/* 424242 */
 
 .arc-hider {
     width: 150px;
@@ -227,10 +224,6 @@ tbody tr td {
     .full {
         width: 100%;
     }
-}
-
-.container {
-    height: 300px;
 }
 
 
