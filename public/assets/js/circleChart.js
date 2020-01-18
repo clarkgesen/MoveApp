@@ -47,42 +47,6 @@ $(document).ready(() => {
     }
     const shoulderpercent = ((shouldercount / 12) * 100);
 
-    // const chartData = data.map((item) => ({
-    //   y: parseFloat(item.reps),
-    //   x: new Date(item.createdAt).getTime(),
-    // }));
-
-    // const chart = Highcharts.chart('container', {
-    //   chart: {
-    //     type: 'line',
-    //   },
-    //   xAxis: [{
-    //     type: 'datetime',
-    //     // tickInterval: .2,
-    //   }],
-    //   title: {
-    //     text: 'Reps',
-    //   },
-    //   // xAxis: {
-    //   categories: createdArray,
-    // },
-    // yAxis: {
-    //   title: {
-    //     text: 'Fruit eaten',
-    //   },
-    // },
-    //   series: [{
-    //     name: 'Reps',
-    //     data: chartData,
-    //   }],
-    // });
-    //   });
-    // });
-
-
-    // /**
-    //  * In the chart render event, add icons on top of the circular shapes
-    //  */
     function renderIcons() {
       // Shoulder icon
       if (!this.series[0].icon) {
@@ -200,13 +164,14 @@ $(document).ready(() => {
       chart: {
         type: 'solidgauge',
         height: '110%',
+        backgroundColor: '#f0efef',
         events: {
           render: renderIcons,
         },
       },
 
       title: {
-        text: 'Activity',
+        text: 'Monthly Goals',
         style: {
           fontSize: '24px',
         },
