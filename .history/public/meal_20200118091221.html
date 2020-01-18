@@ -11,6 +11,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="./assets/css/meal-style.css">
+    <link rel="stylesheet" href="./assets/css/dashboard.css">
 
 
     <title>Move App</title>
@@ -22,105 +23,56 @@
             <button id="btn-1" class="btn btn-outline-success my-2 my-sm-0" type="submit"> LET'S EAT</button>
             </form>
         </div>
-        <!-- ***Nav bar here** -->
-        <!-- <nav>
-            <a href="#0">
-                <img class="logo" src="" alt="forecastr logo">
-            </a>
-            <button class="toggle-mob-menu" aria-expanded="false" aria-label="open menu">
-          <svg width="20" height="20" aria-hidden="true">
-            <use xlink:href="#down"></use>
-          </svg>
-        </button>
-            <ul class="admin-menu" aria-disabled="true">
-                <li class="menu-heading">
-                    <h3>Admin</h3>
-                </li>
-                <li>
-                    <a href="/">
-                        <svg>
-                <use xlink:href="#pages"></use>
-              </svg>
-                        <span>Dashbboard</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="./activity.html">
-                        <svg>
-                <use xlink:href="./activity.html"></use>
-              </svg>
-                        <span>Activity</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="">
-                        <svg>
-                <use xlink:href="#trends"></use>
-              </svg>
-                        <span>Meals</span>
-                    </a>
-                </li>
-                <li>
-                    <button class="collapse-btn" aria-expanded="true" aria-label="collapse menu">
-              <svg aria-hidden="true">
-                <use xlink:href="#collapse"></use>
-              </svg>
-              <span>Collapse</span>
-            </button>
-                </li>
-            </ul>
-        </nav> -->
-        <!-- **Nav bar ends here** -->
-        <div class="container d-none">
-            <div class="row">
-                <!-- **Search bar and table*** -->
-                <div class="col-md-4">
-                    <nav class="navbar navbar-light bg-light">
+    </div>
+    -->
+    <!-- **Nav bar ends here** -->
+    <div class="container d-none">
+        <div class="row">
+            <!-- **Search bar and table*** -->
+            <div class="col-md-4">
+                <nav class="navbar navbar-light bg-light">
 
-                        <form class="form-inline">
-                            <!-- <button type="button" href="./index.html" class="home btn btn-secondary"><i class="fa fa-home"></i></button> -->
-                            <a type="button" href="./index.html" class="home btn btn-secondary"><i class="fa fa-home"></i></a>
-                            <input id="myMeals-OC" class="form-control mr-sm-2" type="search" placeholder="What are we eating?...." aria-label="Search">
-                            <button id="sub-2" class="btn btn-outline-danger my-2 my-sm-0" type="submit">EAT!</button>
+                    <form class="form-inline">
+                        <input id="myMeals-OC" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                        <button id="sub-2" class="btn btn-outline-danger my-2 my-sm-0" type="submit">Search</button>
+                    </form>
+                </nav>
 
-                        </form>
-                    </nav>
+                <table class="table table-striped table-light ">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th scope="col"></th>
+                            <th scope="col">FOOD</th>
+                            <th scope="col">CALs</th>
+                            <th scope="col">DELETE</th>
+                            <th scope="col">ADD</th>
+                        </tr>
+                    </thead>
+                    <tbody>
 
-                    <table class="table table-striped table-light ">
-                        <thead class="thead-dark">
-                            <tr>
-                                <th scope="col"></th>
-                                <th scope="col">FOOD</th>
-                                <th scope="col">CALs</th>
-                                <th scope="col">DELETE</th>
-                                <th scope="col">ADD</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-
-                        </tbody>
-                    </table>
-                </div>
-                <!-- **end of div for search bar and table** -->
-                <!-- <div class="col-md-2">
+                    </tbody>
+                </table>
+            </div>
+            <!-- **end of div for search bar and table** -->
+            <!-- <div class="col-md-2">
                     Variable width content
                 </div> -->
-                <!-- ***Arc-here** -->
+            <!-- ***Arc-here** -->
 
-                <div class="col col-md-6">
+            <div class="col col-md-6">
 
-                    <div id="cals" class="arc-overlay">
+                <div id="cals" class="arc-overlay">
 
-                    </div>
-                    <div class="arc-wrapper">
-                        <div class="arc2"></div>
-                        <div class="arc1"></div>
-                    </div>
+                </div>
+                <div class="arc-wrapper">
+                    <div class="arc2"></div>
+                    <div class="arc1"></div>
                 </div>
             </div>
         </div>
+    </div>
 
-        <!-- **Arc-ends here** -->
+    <!-- **Arc-ends here** -->
     </div>
 
     <script>
@@ -208,7 +160,7 @@
                             console.log("adding");
 
                             newTotal = totalCal + calories;
-                            $("#cals").empty();
+
                             $("#cals").append(newTotal);
 
 
@@ -224,6 +176,11 @@
                             table.row($("td").parents('tr'))
                                 .remove()
                                 .draw();
+
+
+                            // newTotal = totalCal - calories;
+
+                            // $("#cals").append(newTotal);
                         })
 
                     });
