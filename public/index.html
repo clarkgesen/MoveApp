@@ -1,4 +1,5 @@
 <html lang="en">
+
 <head>
 
   <meta charset="UTF-8">
@@ -89,7 +90,7 @@
   <header class="page-header">
     <nav>
       <a href="#0">
-        <img class="logo" src="" alt="MOVE">
+        <img class="logo" src="./assets/images/move_logo.png" alt="MOVE">
       </a>
       <button class="toggle-mob-menu" aria-expanded="false" aria-label="open menu">
         <svg width="20" height="20" aria-hidden="true">
@@ -132,94 +133,30 @@
             <span>Weather</span>
           </a>
         </li>
-        <!-- <li>
-                <a href="#0">
-                  <svg>
-                    <use xlink:href="#comments"></use>
-                  </svg>
-                  <span>Comments</span>
-                </a>
-              </li>
-              <li>
-                <a href="#0">
-                  <svg>
-                    <use xlink:href="#appearance"></use>
-                  </svg>
-                  <span>Appearance</span>
-                </a>
-              </li>
-              <li class="menu-heading">
-                <h3>Settings</h3>
-              </li>
-              <li>
-                <a href="#0">
-                  <svg>
-                    <use xlink:href="#settings"></use>
-                  </svg>
-                  <span>Settings</span>
-                </a>
-              </li> -->
-        <!-- <li>
-                <a href="#0">
-                  <svg>
-                    <use xlink:href="#options"></use>
-                  </svg>
-                  <span>Options</span>
-                </a>
-              </li> -->
-        <!-- <li>
-                <a href="#0">
-                  <svg>
-                    <use xlink:href="#charts"></use>
-                  </svg>
-                  <span>Charts</span>
-                </a>
-              </li> -->
-                <li>
-                    <button class="collapse-btn" aria-expanded="true" aria-label="collapse menu">
-                  <svg aria-hidden="true">
-                    <use xlink:href="#collapse"></use>
-                  </svg>
-                </button>
-                </li>
-            </ul>
-        </nav>
-    </header>
-    <section class="page-content">
-        <section class="search-and-user">
-            <form>
-                <!-- <input type="search" placeholder="Search Pages...">
->>>>>>> 5c8cb80b7837e9ed4b9fe917eb696cd0d52a49c4
-              <button type="submit" aria-label="submit form">
-                <svg aria-hidden="true">
-                  <use xlink:href="#search"></use> -->
-        </svg>
-        </button>
-      </form>
-      <!-- <div class="admin-profile">
-              <span class="greeting">Hello admin</span>
-              <div class="notifications">
-                <span class="badge">1</span> -->
-      <svg>
-        <use xlink:href="#users"></use>
-      </svg>
-      </div>
-      </div>
-    </section>
-
+        <li>
+          <button class="collapse-btn" aria-expanded="true" aria-label="collapse menu">
+            <svg aria-hidden="true">
+              <use xlink:href="#collapse"></use>
+            </svg>
+          </button>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <section class="page-content">
     <section class="grid">
       <article>
         <div id="container" style="width:100%"></div>
       </article>
-        <div id="weightentry-container" style="width:50%"></div>
-          <form id="create-weight">
-            <input class="input is-focused" type="text" placeholder="Current Weight" id="weight">
-            <button type="submit" class="button is-focused">Submit</button>
+      <div id="weightentry-container" style="width:50%"></div>
+      <form id="create-weight">
+        <input class="input is-focused" type="text" placeholder="Current Weight" id="weight">
+        <button type="submit" class="button is-focused">Submit</button>
         </div>
       </form>
       <article id="circleContainer"></article>
-      <article>
-        <div class="">
+      <article id="weatherArticle">
+        <div id="weatherDiv">
           <h1 class="city"></h1>
           <img id="icon"></img>
           <h3 class="temp"></h3>
@@ -229,11 +166,6 @@
           <hr class="my-4">
           <div class="row">
       </article>
-      <article></article>
-      <article>
-
-      </article>
-      <article></article>
       <article></article>
     </section>
     <footer class="page-footer">
@@ -278,23 +210,20 @@
         x: new Date(item.createdAt).getTime()
       };
     });
-    // const labels = response.map((item) => {
-    //   return item.createdAt;
-    // });
-    // document.addEventListener('DOMContentLoaded', function () {
     var myChart = Highcharts.chart('container', {
       chart: {
-        type: 'line'
+        type: 'line',
+        backgroundColor:'#f0efef'
       },
       title: {
-        text: 'My Weight'
+        text: 'Weight Over Time'
       },
       xAxis: {
         type: 'datetime'
       },
       yAxis: {
         title: {
-          text: 'My Weight'
+          text: 'Weight Over Time'
         }
       },
       series: [{
@@ -302,7 +231,7 @@
         data: weights
       }]
     })
-    // })
   })
 </script>
+
 </html>
