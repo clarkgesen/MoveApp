@@ -51,9 +51,9 @@
 }
 
 .arc-wrapper {
-    width: 450px;
-    height: 450px;
-    border-radius: 450px;
+    width: 500px;
+    height: 500px;
+    border-radius: 500px;
     background: red;
     overflow: hidden;
     left: 50px;
