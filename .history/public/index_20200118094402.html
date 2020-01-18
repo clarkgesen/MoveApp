@@ -88,7 +88,7 @@
     <header class="page-header">
         <nav>
             <a href="#0">
-                <img class="logo" src="./assets/images/move_logo.png" alt="MOVE">
+                <img class="logo" src="" alt="MOVE">
             </a>
             <button class="toggle-mob-menu" aria-expanded="false" aria-label="open menu">
         <svg width="20" height="20" aria-hidden="true">
@@ -116,11 +116,11 @@
                     </a>
                 </li>
                 <li>
-                    <a href="./meal.html">
+                    <a href="./meals.html">
                         <svg>
               <use xlink:href="#trends"></use>
             </svg>
-                        <span>Meal</span>
+                        <span>Meals</span>
                     </a>
                 </li>
                 <li>
@@ -128,7 +128,6 @@
                         <svg>
               <use xlink:href="#collection"></use>
             </svg>
-
                         <span>Weather</span>
                     </a>
                 </li>
@@ -239,46 +238,7 @@
         <footer class="page-footer">
             </small>
         </footer>
-        =======
-        <span>Weather</span>
-        </a>
-        </li>
-        <li>
-            <button class="collapse-btn" aria-expanded="true" aria-label="collapse menu">
-            <svg aria-hidden="true">
-              <use xlink:href="#collapse"></use>
-            </svg>
-          </button>
-        </li>
-        </ul>
-        </nav>
-        </header>
-        <section class="page-content">
-            <section class="grid">
-                <article>
-                    <div id="container" style="width:100%"></div>
-                </article>
-                <div id="weightentry-container" style="width:50%"></div>
-                <form id="create-weight">
-                    <input class="input is-focused" type="text" placeholder="Current Weight" id="weight">
-                    <button type="submit" class="button is-focused">Submit</button>
-                    </div>
-                </form>
-                <article id="circleContainer"></article>
-                <article id="weatherArticle">
-                    <div id="weatherDiv">
-                        <h1 class="city"></h1>
-                        <img id="icon"></img>
-                        <h3 class="temp"></h3>
-                        <h3 class="humidity"></h3>
-                        <h3 class="windSpeed"></h3>
-                        <h3 class="uvIndex"></h3>
-                        <hr class="my-4">
-                        <div class="row">
-                </article>
-                <article></article>
-                >>>>>>> 5b8ae7afc02c73334e60a2166f53591d84325c99
-            </section>
+    </section>
 </body>
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.js"></script>
@@ -304,73 +264,35 @@
 <script src="./assets/js/script.js"></script>
 <script src="https://code.highcharts.com/highcharts.src.js"></script>
 <script>
-    << << << < HEAD
     var queryURL = '/api/weight'
     $.ajax({
-            url: queryURL,
-            method: 'GET'
-        }).then(function(response) {
-            console.log(response);
-            const weights = response.map((item) => {
-                return {
-                    y: parseInt(item.weight),
-                    x: new Date(item.createdAt).getTime()
-                };
-            });
-            // const labels = response.map((item) => {
-            //   return item.createdAt;
-            // });
-            // document.addEventListener('DOMContentLoaded', function () {
-            var myChart = Highcharts.chart('container', {
-                    chart: {
-                        type: 'line'
-                    },
-                    title: {
-                        text: 'My Weight'
-                    },
-                    xAxis: {
-                        type: 'datetime'
-                    },
-                    yAxis: {
-                        title: {
-                            text: 'My Weight'
-                        }
-                    },
-                    series: [{
-                        name: 'My Weight',
-                        data: weights
-                    }]
-                })
-                // })
-        }) ===
-        ===
-        =
-        var queryURL = '/api/weight'
-    $.ajax({
-            url: queryURL,
-            method: 'GET'
-        }).then(function(response) {
-            console.log(response);
-            const weights = response.map((item) => {
-                return {
-                    y: parseInt(item.weight),
-                    x: new Date(item.createdAt).getTime()
-                };
-            });
-            var myChart = Highcharts.chart('container', {
+        url: queryURL,
+        method: 'GET'
+    }).then(function(response) {
+        console.log(response);
+        const weights = response.map((item) => {
+            return {
+                y: parseInt(item.weight),
+                x: new Date(item.createdAt).getTime()
+            };
+        });
+        // const labels = response.map((item) => {
+        //   return item.createdAt;
+        // });
+        // document.addEventListener('DOMContentLoaded', function () {
+        var myChart = Highcharts.chart('container', {
                 chart: {
-                    type: 'line',
-                    backgroundColor: '#f0efef'
+                    type: 'line'
                 },
                 title: {
-                    text: 'Weight Over Time'
+                    text: 'My Weight'
                 },
                 xAxis: {
                     type: 'datetime'
                 },
                 yAxis: {
                     title: {
-                        text: 'Weight Over Time'
+                        text: 'My Weight'
                     }
                 },
                 series: [{
@@ -378,9 +300,8 @@
                     data: weights
                 }]
             })
-        }) >>>
-        >>>
-        > 5 b8ae7afc02c73334e60a2166f53591d84325c99
+            // })
+    })
 </script>
 
 </html>

@@ -71,18 +71,15 @@
             </ul>
         </nav> -->
         <!-- **Nav bar ends here** -->
-        <div class="container d-none">
-            <div class="row">
+        <div class="container .d-none ">
+            <div class="row .d-none ">
                 <!-- **Search bar and table*** -->
                 <div class="col-md-4">
                     <nav class="navbar navbar-light bg-light">
 
                         <form class="form-inline">
-                            <!-- <button type="button" href="./index.html" class="home btn btn-secondary"><i class="fa fa-home"></i></button> -->
-                            <a type="button" href="./index.html" class="home btn btn-secondary"><i class="fa fa-home"></i></a>
-                            <input id="myMeals-OC" class="form-control mr-sm-2" type="search" placeholder="What are we eating?...." aria-label="Search">
-                            <button id="sub-2" class="btn btn-outline-danger my-2 my-sm-0" type="submit">EAT!</button>
-
+                            <input id="myMeals-OC" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                            <button id="sub-2" class="btn btn-outline-danger my-2 my-sm-0" type="submit">Search</button>
                         </form>
                     </nav>
 
@@ -102,9 +99,9 @@
                     </table>
                 </div>
                 <!-- **end of div for search bar and table** -->
-                <!-- <div class="col-md-2">
+                <div class="col-md-2">
                     Variable width content
-                </div> -->
+                </div>
                 <!-- ***Arc-here** -->
 
                 <div class="col col-md-6">
@@ -142,6 +139,20 @@
             $(".section-intro").css("box-shadow", "inset 0px 0px 900px 150px #4c3f37");
 
 
+
+
+
+
+
+
+
+
+
+            // **this code allow the to change to another page when button is clicked**
+            // window.location.href = "mealOnclick.html";
+
+
+
             // ***This code changes the background color onclick**
             // $(".section-intro").css("background", "rgba(0, 0, 0, .5)");
 
@@ -160,10 +171,20 @@
             let myMeals = $("#myMeals-OC").val().trim();
             console.log(myMeals);
 
+
+
+
             const nutriQ = 'https://trackapi.nutritionix.com/v2/natural/nutrients';
+
+
             $.ajax({
+
+
                     url: "/api/mealsss",
                     method: "POST",
+
+
+
 
                     data: {
                         "query": `${myMeals}`
@@ -207,12 +228,23 @@
 
                             console.log("adding");
 
-                            newTotal = totalCal + calories;
-                            $("#cals").empty();
-                            $("#cals").append(newTotal);
 
 
-                        })
+
+
+                            // let newTotal = totalCal + calories;
+
+                            // $("#cals").append(newTotal);
+
+
+
+
+
+
+
+
+
+                        });
 
                         $(document).on("click", ".del", function() {
 
@@ -224,9 +256,22 @@
                             table.row($("td").parents('tr'))
                                 .remove()
                                 .draw();
+
+
+
+
+
                         })
 
+
+
+
+
+
+
                     });
+
+
 
                 }).fail(function(err) {
                     console.log("fail not working");
